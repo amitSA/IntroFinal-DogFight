@@ -1,6 +1,11 @@
+/* Amit Saxena - Intro Final Project
+   
+
+
+*/
 package menus.SingleComp;
 
-// Amit Saxena - Intro Final Project
+
 
 import java.awt.*;
 import java.awt.event.*;
@@ -85,14 +90,6 @@ public class SingleCompMenu extends JFrame implements ActionListener
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
-	
-	
-	public static void main(String[] args)
-    {
-		SingleCompMenu menu = new SingleCompMenu();
-	}
-
-
 	
 	public void actionPerformed(ActionEvent e) 
 	{
