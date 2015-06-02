@@ -402,7 +402,7 @@ public abstract class FighterPlane {
 	 }
 	 
 	 //abstract methods
-	 abstract public void updateRoute();  // for the AI planes, but need UserPlane to have it
+	  // for the AI planes, but need UserPlane to have it
 	 
 	 
 	 

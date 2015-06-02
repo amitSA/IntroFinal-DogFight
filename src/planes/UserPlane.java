@@ -14,7 +14,7 @@ import javax.swing.ImageIcon;
 
 
 
-public class UserPlane extends FighterPlane{
+public abstract class UserPlane extends FighterPlane implements UserControlled{
 
 
 

@@ -10,7 +10,7 @@ import javax.swing.GroupLayout.Alignment;
 import main.main;
 import planes.Ammo;
 import planes.FighterPlane;
-import planes.Wingman;
+import planes.AIPlane;
 
 
 // This GamePanel is the standard gameplanel
@@ -30,7 +30,7 @@ public class GamePanel extends JPanel implements  ActionListener,MouseListener {
 	
 	
 	//temporary
-	Wingman wingman;
+	AIPlane wingman;
 
 	public GamePanel(JFrame frame)
 	{   
@@ -107,7 +107,8 @@ public class GamePanel extends JPanel implements  ActionListener,MouseListener {
 		
 		for(int i = 0;i<planes.size();i++)
 		{   
-			    planes.get(i).updateRoute();
+				if(planes.get(i) instanceof AIPlane)
+			    	((AIPlane)(planes.get(i))).updateRoute();
 			    if(seconds%45==0)
 			    planes.get(i).checkForSmoke(clouds);	
 				if(planes.get(i).isGoingUp())

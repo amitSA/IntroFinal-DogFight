@@ -14,7 +14,7 @@ public class FlightPlan implements Serializable  // manages the current plan of 
 	private double timeLeft;
 	private ArrayList<FighterPlane> planes;
 	 
-	private Wingman wingman;  // wingman is the wingman associated with this flightplan
+	private AIPlane wingman;  // wingman is the wingman associated with this flightplan
 	private FighterPlane target;
 	
 	public static int route1; // pursue enemy  
@@ -26,7 +26,7 @@ public class FlightPlan implements Serializable  // manages the current plan of 
 	private Point2D.Double randomMov;
 		
 	
-	public FlightPlan(ArrayList<FighterPlane> planes,Wingman wing)
+	public FlightPlan(ArrayList<FighterPlane> planes,AIPlane wing)
 	{
 		wingman = wing;
 		this.planes = planes;

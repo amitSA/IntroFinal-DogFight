@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 import otherstuff.*;
 
-public class Wingman extends FighterPlane
+public abstract class AIPlane extends FighterPlane implements AIControlled
 {
        
 	FlightPlan plan;
@@ -20,7 +20,7 @@ public class Wingman extends FighterPlane
 
 	
 	
-	public Wingman(Image plane, int startX,int startY, ArrayList<Ammo> bullets, String team,ArrayList<FighterPlane> planes,int startDegrees,int health) 
+	public AIPlane(Image plane, int startX,int startY, ArrayList<Ammo> bullets, String team,ArrayList<FighterPlane> planes,int startDegrees,int health) 
 	{
 		super(plane, startX,startY, bullets, team,startDegrees,health);	
 		

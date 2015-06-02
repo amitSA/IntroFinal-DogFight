@@ -69,7 +69,7 @@ public class EliminationRules implements Rules
 				superArray.get(i)[0] = kills;
 				if(teams.get(i).getKillCount() % 4 == 0)
 				{
-					if(teams.get(i).isUserPlaneAlive())
+					if(teams.get(i).isCaptainPlaneAlive())
 					{
 						planes.add(teams.get(i).makeNewWingman());
 					}
