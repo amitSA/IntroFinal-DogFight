@@ -1,4 +1,4 @@
-package menus.SingleComp;
+package menus;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;

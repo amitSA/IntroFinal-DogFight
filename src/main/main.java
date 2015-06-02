@@ -5,7 +5,7 @@
 
 
 package main;
-import menus.SingleComp.SingleCompMenu;
+import menus.SingleCompMenu;
 
 public class main {
 
