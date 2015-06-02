@@ -13,7 +13,7 @@ import otherstuff.Smoke;
 
 
 
-public abstract class FighterPlane implements Serializable {
+public abstract class FighterPlane {
 
 	
 	static double [] sin = new double[720]; // techinally it can be 360

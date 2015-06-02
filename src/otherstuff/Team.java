@@ -112,27 +112,15 @@ public class Team
 	
 	public boolean isUserPlaneAlive()
 	{
-		boolean bool = true;
-		for(int i = 0;i<planes.size();i++)
-		{
-			try
-			{
-				UserPlane user = (UserPlane) planes.get(i);
-				if(user.getTeam().equals(team))
-				bool = false;
-			} 
-			catch(ClassCastException e) {}
-			finally
-			{
-				
+		boolean bool = false;
+		for(int i = 0;i<planes.size();i++){
+			FighterPlane p = planes.get(i);
+			if(p instanceof UserPlane && p.getTeam().equals(team)){
+				bool = true;
+				break;
 			}
 		}
-		if(bool)
-		{
-			return false; 
-		}
-		return true;
-		
+		return bool;
 	}
 	
 	public int getPlanesAlive()
