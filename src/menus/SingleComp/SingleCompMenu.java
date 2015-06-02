@@ -12,6 +12,7 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
+import main.main;
 import otherstuff.GamePanel;
 
 
@@ -61,7 +62,8 @@ public class SingleCompMenu extends JFrame implements ActionListener
 		start.addActionListener(this);
 		startPanel.add(start);
 		
-		Image background = new ImageIcon("Background.jpg").getImage();
+		String preFix = main.RESOURCES_PICS_PREFIX;
+		Image background = new ImageIcon(preFix+"/Background.jpg").getImage();
 		centerPanel = new CenterPanel(background);
 		
 		MenuTitle menuTitle = new MenuTitle(501);

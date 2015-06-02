@@ -84,10 +84,10 @@ public abstract class FighterPlane implements Serializable {
 				cos[i] = Math.cos(Math.toRadians(i/2.0));
 			}
 			
-			for(int i = 0;i<720;i++)
+			/*for(int i = 0;i<720;i++)
 			{
 				System.out.println("Angle: " + i/2.0 + "   s: " +sin[i] );
-			}
+			}*/
 		}
 		
 	}

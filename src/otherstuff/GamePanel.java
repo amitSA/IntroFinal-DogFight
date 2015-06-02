@@ -7,8 +7,7 @@ import java.util.ArrayList;
 import javax.swing.*;
 import javax.swing.GroupLayout.Alignment;
 
-
-
+import main.main;
 import planes.Ammo;
 import planes.FighterPlane;
 import planes.Wingman;
@@ -196,12 +195,13 @@ public class GamePanel extends JPanel implements  ActionListener,MouseListener {
 	{
 		    bullets = new ArrayList<Ammo>();
 		    planes = new ArrayList<FighterPlane>();
-			Image JapanImage = (new ImageIcon("Japanese Plane.png")).getImage();
-			Image USAImage = (new ImageIcon("U.S Plane.png")).getImage();
-			Image GermanyImage = (new ImageIcon("Germany Plane.png")).getImage();
-			Image wingJapan =  (new ImageIcon("Japanese Wingmen.png")).getImage();
-        	Image wingUSA =  (new ImageIcon("U.S Wingmen.png")).getImage();
-        	Image wingGermany =  (new ImageIcon("Germany Wingmen.png")).getImage();
+		    String preFix = main.RESOURCES_PICS_PREFIX;
+			Image JapanImage = (new ImageIcon(preFix+"/Japanese Plane.png")).getImage();
+			Image USAImage = (new ImageIcon(preFix+"/U.S Plane.png")).getImage();
+			Image GermanyImage = (new ImageIcon(preFix+"/Germany Plane.png")).getImage();
+			Image wingJapan =  (new ImageIcon(preFix+"/Japanese Wingmen.png")).getImage();
+        	Image wingUSA =  (new ImageIcon(preFix+"/U.S Wingmen.png")).getImage();
+        	Image wingGermany =  (new ImageIcon(preFix+"/Germany Wingmen.png")).getImage();
 			
 			Image [] images = {JapanImage, USAImage,GermanyImage};
 			Image [] wingImages = {wingJapan,wingUSA,wingGermany};
