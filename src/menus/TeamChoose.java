@@ -27,7 +27,7 @@ public class TeamChoose extends JPanel
 //        BoxLayout layout = new BoxLayout(this,BoxLayout.Y_AXIS);
 //        setLayout(layout);        
         
-        String[] stringList = {"No Player","Player 1", "Player 2", "Player 3"};
+        String[] stringList = {"No Player","Player 1", "Player 2", "Player 3","AI Player"};
         playerList = new JComboBox(stringList);
         playerList.setSelectedIndex(0);
         wingmenField = new JTextField(5);

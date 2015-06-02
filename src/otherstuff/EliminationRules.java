@@ -38,9 +38,12 @@ public class EliminationRules implements Rules
 	}
 	
 	
-	public void updateGame()
+	public void updateGame() 
 	{
 		int [] planesAlive = new int[teams.size()];
+		
+		for(int i = 0;i<teams.size();i++)
+			System.out.println("Team Name: " + teams.get(i).team + "   kill-count : " + teams.get(i).getKillCount());
 		
 		for(int i = 0;i<teams.size();i++)
 		{
@@ -71,11 +74,11 @@ public class EliminationRules implements Rules
 				{
 					if(teams.get(i).isCaptainPlaneAlive())
 					{
-						planes.add(teams.get(i).makeNewWingman());
+						planes.add((FighterPlane) teams.get(i).makeNewWingman());
 					}
 					else
 					{
-						planes.add(teams.get(i).makeNewUserPlane());
+						planes.add((FighterPlane) teams.get(i).makeNewCaptainPlane());
 					}
 				}
 
@@ -86,13 +89,13 @@ public class EliminationRules implements Rules
 				superArray.get(i)[1] = losses;
 				if(teams.get(i).getLosses() % 3 == 0)
 				{
-					if(teams.get(i).isUserPlaneAlive())
+					if(teams.get(i).isCaptainPlaneAlive())
 					{
-						planes.add(teams.get(i).makeNewWingman());
+						planes.add((FighterPlane) teams.get(i).makeNewWingman());
 					}
 					else
 					{
-						planes.add(teams.get(i).makeNewUserPlane());
+						planes.add((FighterPlane) teams.get(i).makeNewCaptainPlane());
 					}
 				}
 			}

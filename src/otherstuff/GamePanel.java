@@ -214,39 +214,64 @@ public class GamePanel extends JPanel implements  ActionListener,MouseListener {
 			int ranH = (int)(Math.random() * height);
 		//	int wF = getWidth();
 		//	int hF = getHeight();
+			
+			//Two 2d Array holding which sides of the screen and angles planes should be released at
+			int [][] dir = {{0,0,ranH},
+					        {90,ranW,0+10},
+					        {180,width-66,ranH}};
+			boolean [][] dirB = {{false,true},
+					        {true,false},
+					        {false,true}};
+			boolean [] sidesTaken = {false,false,false};
 		
 			for(int ip = 0;ip<players.length;ip++)
 			{
 				if(players[ip].equals("Player 1"))
-					{
-				      teams.add(new Team(countries[ip],KeyEvent.VK_W,KeyEvent.VK_S,KeyEvent.VK_1,bullets,images[ip],0,0,ranH,planes,wingImages[ip],false,true,width,height,75,100));
-				      planes.add(teams.get(teams.size()-1).makeNewUserPlane());
+					{ 
+					  sidesTaken[0] = true;
+				      teams.add(new UserTeam(countries[ip],KeyEvent.VK_W,KeyEvent.VK_S,KeyEvent.VK_1,bullets,images[ip],dir[0][0],dir[0][1],dir[0][2],planes,wingImages[ip],dirB[0][0],dirB[0][1],width,height,75,100));
+				      planes.add((FighterPlane) teams.get(teams.size()-1).makeNewCaptainPlane());
 				      for(int i = 0;i<wingmenNum[ip];i++)
 				      {
-				    	  planes.add(teams.get(teams.size()-1).makeNewWingman());
+				    	  planes.add((FighterPlane) teams.get(teams.size()-1).makeNewWingman());
 				      }
 				     
 					}
 				else if(players[ip].equals("Player 2"))
 					{
-				      teams.add(new Team(countries[ip],KeyEvent.VK_I,KeyEvent.VK_K,KeyEvent.VK_SPACE,bullets,images[ip],90,ranW,0+10,planes,wingImages[ip],true,false,width,height,75,100));
-				      planes.add(teams.get(teams.size()-1).makeNewUserPlane());
+					  sidesTaken[1] = true;
+				      teams.add(new UserTeam(countries[ip],KeyEvent.VK_I,KeyEvent.VK_K,KeyEvent.VK_SPACE,bullets,images[ip],dir[1][0],dir[1][1],dir[1][2],planes,wingImages[ip],dirB[1][0],dirB[1][1],width,height,75,100));
+				      planes.add((FighterPlane) teams.get(teams.size()-1).makeNewCaptainPlane());
 				      for(int i = 0;i<wingmenNum[ip];i++)
 				      {
-				    	  planes.add(teams.get(teams.size()-1).makeNewWingman());
+				    	  planes.add((FighterPlane) teams.get(teams.size()-1).makeNewWingman());
 				      }
 					}
 				else if(players[ip].equals("Player 3"))
-					{				     
-				      teams.add(new Team(countries[ip],KeyEvent.VK_UP,KeyEvent.VK_DOWN,KeyEvent.VK_SLASH,bullets,images[ip],180,width-66,ranH,planes,wingImages[ip],false,true,width,height,75,100));
-				      planes.add(teams.get(teams.size()-1).makeNewUserPlane());
+					{				    
+					  sidesTaken[2] = true;
+				      teams.add(new UserTeam(countries[ip],KeyEvent.VK_UP,KeyEvent.VK_DOWN,KeyEvent.VK_SLASH,bullets,images[ip],dir[2][0],dir[2][1],dir[2][2],planes,wingImages[ip],dirB[2][0],dirB[2][1],width,height,75,100));
+				      planes.add((FighterPlane) teams.get(teams.size()-1).makeNewCaptainPlane());
 				      for(int i = 0;i<wingmenNum[ip];i++)
 				      {
-				    	  planes.add(teams.get(teams.size()-1).makeNewWingman());
+				    	  planes.add((FighterPlane) teams.get(teams.size()-1).makeNewWingman());
 				      }
 					}
 			}
-	
+			for(int ip = 0;ip<players.length;ip++){
+				if(players[ip].equals("AI Player")){
+				  int n = 0;
+				  for(;n < sidesTaken.length && sidesTaken[n];n++){}
+				  sidesTaken[n]=true;
+				  System.out.println(n);
+				  teams.add(new AITeam(countries[ip],bullets,images[ip],dir[n][0],dir[n][1],dir[n][2],planes,wingImages[ip],dirB[n][0],dirB[n][1],width,height,75,100));
+			      planes.add((FighterPlane) teams.get(teams.size()-1).makeNewCaptainPlane());
+			      for(int i = 0;i<wingmenNum[ip];i++)
+			      {
+			    	  planes.add((FighterPlane) teams.get(teams.size()-1).makeNewWingman());
+			      }
+				}	
+			}
 	        
 		    rules = new EliminationRules(teams,planes);
 			keys = new KeyInteraction(planes,this);

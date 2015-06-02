@@ -110,6 +110,7 @@ public class SingleCompMenu extends JFrame implements ActionListener
 		boolean bool = true;
 		for(int i = 0;i<2;i++)
 		{
+			if(array[i].equals("AI Player"))continue;
 			if(array[i].equals(array[(i+1)%3]) || array[i].equals(array[(i+2)%3]) )
 			{
                bool = false;				

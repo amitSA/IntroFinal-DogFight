@@ -92,6 +92,7 @@ public abstract class Team
 			if(planes.get(i).getTeam().equals(team))
 				num++;
 		}
+		
 		return num;
 	}
 	
