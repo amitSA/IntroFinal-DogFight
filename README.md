@@ -1,7 +1,7 @@
 ﻿IntroFinal-DogFight
 ===================
 
-This is the game I made for my Intro-Java class project final.
+This is the game I made for my Intro-Java class project final.  This program utilizes AI, hit-detection of rotated objects, and particle effects
 
 Amit Saxena, 5/5/13
 
